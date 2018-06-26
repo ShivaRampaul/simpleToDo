@@ -11,7 +11,15 @@ window.setTimeout(function() {
   		var newToDo = prompt("Enter new ToDo: ");
   		toDos.push(newToDo);
   	} else if(ans === "list") {
-  		console.log(toDos);
+  		console.log("****************");
+  		toDos.forEach(function(todo){
+  			console.log(toDos.indexOf(todo) + ": " + todo)
+  		});
+  		console.log("****************");
+  	} else if(ans === "delete") {
+  		var delAns = Number(prompt("What index to delete?"));
+  		toDos.splice(delAns, 1);
+  		console.log("ToDo deleted.");
   	} else {
   		alert("Sorry, please enter a valid response.");
   	}
